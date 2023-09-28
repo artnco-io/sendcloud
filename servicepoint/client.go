@@ -3,13 +3,14 @@ package servicepoint
 import (
 	"errors"
 	"fmt"
-	"github.com/afosto/sendcloud-go"
-	"golang.org/x/text/runes"
-	"golang.org/x/text/transform"
-	"golang.org/x/text/unicode/norm"
 	"net/url"
 	"strings"
 	"unicode"
+
+	"github.com/lpieri/sendcloud"
+	"golang.org/x/text/runes"
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 )
 
 var (

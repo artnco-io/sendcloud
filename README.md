@@ -1,9 +1,9 @@
-[![build](https://github.com/afosto/sendcloud-go/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/afosto/sendcloud-go/actions/workflows/build-and-test.yml)
+[![build](https://github.com/lpieri/sendcloud/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/lpieri/sendcloud/actions/workflows/build-and-test.yml)
 # sendcloud-go
 
 An API-client for Sendcloud written in Golang.
 
-## Overview [![GoDoc](https://godoc.org/github.com/afosto/sendcloud-go?status.svg)](https://godoc.org/github.com/afosto/sendcloud-go)
+## Overview [![GoDoc](https://godoc.org/github.com/lpieri/sendcloud?status.svg)](https://godoc.org/github.com/lpieri/sendcloud)
 
 This package currently supports:
 - parcels
@@ -15,7 +15,7 @@ This package currently supports:
 ## Install
 
 ```
-go get github.com/afosto/sendcloud-go
+go get github.com/lpieri/sendcloud
 ```
 
 ## Examples

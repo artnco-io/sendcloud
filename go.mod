@@ -1,4 +1,4 @@
-module github.com/afosto/sendcloud-go
+module github.com/lpieri/sendcloud
 
 go 1.21
 
