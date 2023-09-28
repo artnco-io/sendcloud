@@ -20,7 +20,8 @@ coverage.txt
 node_modules
 swagger.yaml.tmp
 tmp-*/
-vendor/
+vendor
+vendor/**
 gen.sum.tmp
 go/cmd/zenlaw/zenlaw
 zenlaw.io
