@@ -10,15 +10,15 @@ type Method struct {
 	Name           string
 	CarrierCode    string
 	IsServicePoint bool
-	Amount         int64
+	Price          float64
 	MinWeight      int64
 	MaxWeight      int64
 	Countries      []Country
 }
 
 type Country struct {
-	Code   string
-	Amount int64
+	Code  string
+	Price float64
 }
 
 type MethodListResponseContainer struct {
@@ -61,13 +61,13 @@ func (a *MethodListResponseContainer) GetResponse() interface{} {
 	return methods
 }
 
-//Get formatted response
+// Get formatted response
 func (m *MethodResponseContainer) GetResponse() interface{} {
 	method := m.ShippingMethod.ToMethod()
 	return method
 }
 
-//Set the response
+// Set the response
 func (m *MethodResponseContainer) SetResponse(body []byte) error {
 	err := json.Unmarshal(body, &m)
 	if err != nil {
@@ -76,7 +76,7 @@ func (m *MethodResponseContainer) SetResponse(body []byte) error {
 	return nil
 }
 
-//Set the response
+// Set the response
 func (a *MethodListResponseContainer) SetResponse(body []byte) error {
 	err := json.Unmarshal(body, &a)
 	if err != nil {
@@ -85,7 +85,7 @@ func (a *MethodListResponseContainer) SetResponse(body []byte) error {
 	return nil
 }
 
-//Parse methods to a stricter format
+// Parse methods to a stricter format
 func (sm *MethodResponse) ToMethod() *Method {
 	maxWeightFloat, _ := strconv.ParseFloat(sm.MaxWeight, 64)
 	maxWeight := int64(maxWeightFloat * 1000)
@@ -96,15 +96,15 @@ func (sm *MethodResponse) ToMethod() *Method {
 		ID:             sm.ID,
 		Name:           sm.Name,
 		CarrierCode:    sm.Carrier,
-		Amount:         int64(sm.Price) * 100,
+		Price:          sm.Price,
 		MinWeight:      minWeight,
 		MaxWeight:      maxWeight,
 		IsServicePoint: sm.ServicePointInput != "none",
 	}
 	for _, c := range sm.Countries {
 		country := Country{
-			Code:   c.Iso2,
-			Amount: int64(c.Price * 100),
+			Code:  c.Iso2,
+			Price: c.Price,
 		}
 		method.Countries = append(method.Countries, country)
 	}
