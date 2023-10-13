@@ -11,8 +11,8 @@ type Method struct {
 	CarrierCode    string
 	IsServicePoint bool
 	Price          float64
-	MinWeight      int64
-	MaxWeight      int64
+	MinWeight      float64
+	MaxWeight      float64
 	Countries      []Country
 }
 
@@ -88,9 +88,9 @@ func (a *MethodListResponseContainer) SetResponse(body []byte) error {
 // Parse methods to a stricter format
 func (sm *MethodResponse) ToMethod() *Method {
 	maxWeightFloat, _ := strconv.ParseFloat(sm.MaxWeight, 64)
-	maxWeight := int64(maxWeightFloat * 1000)
+	maxWeight := maxWeightFloat
 	minWeightFloat, _ := strconv.ParseFloat(sm.MinWeight, 64)
-	minWeight := int64(minWeightFloat * 1000)
+	minWeight := minWeightFloat
 
 	method := &Method{
 		ID:             sm.ID,
