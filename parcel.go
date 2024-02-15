@@ -35,6 +35,16 @@ type ParcelParams struct {
 	OrderNumber      string
 	SenderID         int64
 	Items            []CreateParcelItemRequest
+	FromName         string `json:"from_name"`
+	FromCompanyName  string `json:"from_company_name"`
+	FromAddress      string `json:"from_address"`
+	FromAddress2     string `json:"from_address_2"`
+	FromCity         string `json:"from_city"`
+	FromPostalCode   string `json:"from_postal_code"`
+	FromCountryCode  string `json:"from_country"`
+	FromTelephone    string `json:"from_telephone"`
+	FromEmail        string `json:"from_email"`
+	FromVATNumber    string `json:"from_vat_number"`
 	// The currency of the total order value. Validated against a format of
 	// “XYZ” (ISO 4217).
 	TotalOrderValueCurrency *string
@@ -119,6 +129,16 @@ type ParcelRequest struct {
 	PostalCode                 string                       `json:"postal_code"`
 	CountryState               string                       `json:"country_state"`
 	Country                    string                       `json:"country"`
+	FromName                   string                       `json:"from_name"`
+	FromCompanyName            string                       `json:"from_company_name"`
+	FromAddress                string                       `json:"from_address"`
+	FromAddress2               string                       `json:"from_address_2"`
+	FromCity                   string                       `json:"from_city"`
+	FromPostalCode             string                       `json:"from_postal_code"`
+	FromCountryCode            string                       `json:"from_country"`
+	FromTelephone              string                       `json:"from_telephone"`
+	FromEmail                  string                       `json:"from_email"`
+	FromVATNumber              string                       `json:"from_vat_number"`
 	Weight                     string                       `json:"weight,omitempty"`
 	Telephone                  string                       `json:"telephone"`
 	Email                      string                       `json:"email"`
@@ -232,6 +252,16 @@ func (p *ParcelParams) GetPayload() interface{} {
 		CustomsInvoiceNr:           p.CustomsInvoiceNr,
 		CustomsShipmentType:        p.CustomsShipmentType,
 		ApplyShippingRules:         p.ApplyShippingRules,
+		FromName:                   p.FromName,
+		FromCompanyName:            p.FromCompanyName,
+		FromAddress:                p.FromAddress,
+		FromAddress2:               p.FromAddress2,
+		FromCity:                   p.FromCity,
+		FromPostalCode:             p.FromPostalCode,
+		FromCountryCode:            p.FromCountryCode,
+		FromTelephone:              p.FromTelephone,
+		FromEmail:                  p.FromEmail,
+		FromVATNumber:              p.FromVATNumber,
 	}
 	if p.Method != 0 {
 		parcel.Shipment = &CreateParcelShipmentRequest{ID: p.Method}
