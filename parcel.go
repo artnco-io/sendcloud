@@ -18,19 +18,17 @@ const (
 )
 
 type ParcelParams struct {
-	Name             string
-	CompanyName      string
-	Street           string
-	HouseNumber      string
-	City             string
-	PostalCode       string
-	State            string
-	CountryCode      string
-	AdditionalInfo   string
-	IsLabelRequested bool
+	Name             string `json:"name"`
+	CompanyName      string `json:"company_name"`
+	Address          string `json:"address"`
+	Address2         string `json:"address_2"`
+	City             string `json:"city"`
+	PostalCode       string `json:"postal_code"`
+	CountryCode      string `json:"country"`
+	IsLabelRequested bool   `json:"request_label"`
 	Method           int64
-	EmailAddress     string
-	PhoneNumber      string
+	EmailAddress     string `json:"email"`
+	Telephone        string `json:"telephone"`
 	ExternalID       string
 	ToServicePointID int64
 	Weight           string
