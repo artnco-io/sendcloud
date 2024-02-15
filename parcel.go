@@ -138,7 +138,7 @@ type ParcelRequest struct {
 	FromCountryCode            string                       `json:"from_country"`
 	FromTelephone              string                       `json:"from_telephone"`
 	FromEmail                  string                       `json:"from_email"`
-	FromVATNumber              string                       `json:"from_vat_number"`
+	FromVATNumber              string                       `json:"from_vat_number,omitempty"`
 	Weight                     string                       `json:"weight,omitempty"`
 	Telephone                  string                       `json:"telephone"`
 	Email                      string                       `json:"email"`
