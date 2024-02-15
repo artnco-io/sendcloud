@@ -37,7 +37,7 @@ type ParcelParams struct {
 	Items            []CreateParcelItemRequest
 	FromName         string `json:"from_name"`
 	FromCompanyName  string `json:"from_company_name"`
-	FromAddress      string `json:"from_address"`
+	FromAddress      string `json:"from_address_1"`
 	FromAddress2     string `json:"from_address_2"`
 	FromCity         string `json:"from_city"`
 	FromPostalCode   string `json:"from_postal_code"`
@@ -131,7 +131,7 @@ type ParcelRequest struct {
 	Country                    string                       `json:"country"`
 	FromName                   string                       `json:"from_name"`
 	FromCompanyName            string                       `json:"from_company_name"`
-	FromAddress                string                       `json:"from_address"`
+	FromAddress                string                       `json:"from_address_1"`
 	FromAddress2               string                       `json:"from_address_2"`
 	FromCity                   string                       `json:"from_city"`
 	FromPostalCode             string                       `json:"from_postal_code"`
